@@ -6,9 +6,13 @@ import android.os.Bundle
 import android.provider.ContactsContract
 import android.util.Log
 import androidx.core.app.ActivityCompat
+import androidx.recyclerview.widget.RecyclerView
 import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var adapter: ContactsListAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,9 +22,19 @@ class MainActivity : AppCompatActivity() {
         ) == PackageManager.PERMISSION_GRANTED
         if(permissionGranted){
             requestContacts()
+            setupRecyclerView()
         }else{
             requestPermission()
         }
+    }
+
+    private fun setupRecyclerView(){
+        val rvContactList = findViewById<RecyclerView>(R.id.rv_contacts_list)
+        adapter = ContactsListAdapter()
+        // Добавление нашего листа в адаптер, чтобы ему было с чем работать
+        adapter.contactsList = contactsList
+        rvContactList.adapter = adapter
+
     }
 
     private fun requestContacts(){
