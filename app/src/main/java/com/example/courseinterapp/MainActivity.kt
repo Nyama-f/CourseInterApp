@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
             android.Manifest.permission.READ_CONTACTS
         ) == PackageManager.PERMISSION_GRANTED
         if(permissionGranted){
-            requestContacts()
+            startService(MyService.newIntent(this))
             setupRecyclerView()
         }else{
             requestPermission()
@@ -37,29 +37,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun requestContacts(){
-        thread {
-            val cursor = contentResolver.query(
-                ContactsContract.Contacts.CONTENT_URI,
-                null,
-                null,
-                null,
-                null
-            )
-            while (cursor?.moveToNext() == true){
-                val id = cursor.getInt(
-                    cursor.getColumnIndexOrThrow(ContactsContract.Contacts._ID)
-                )
-                val name = cursor.getString(
-                    cursor.getColumnIndexOrThrow(ContactsContract.Contacts.DISPLAY_NAME)
-                )
-                val contact = Contact(id, name)
-                contactsList.add(contact)
-                Log.d("MainActivity", contact.toString())
-            }
-            cursor?.close()
-        }
-    }
     // Запрашиваем разрешение у пользователя
     private fun requestPermission(){
         ActivityCompat.requestPermissions(
@@ -79,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         if(requestCode == READ_CONTACTS_REQUEST_CODE && grantResults.isNotEmpty()){
             val permissionGranted = grantResults[0] == PackageManager.PERMISSION_GRANTED
             if(permissionGranted){
-                requestContacts()
+                startService(MyService.newIntent(this))
             }else{
                 // Второй раз спрашивать у пользователя не будем
                 Log.d("MainActivity", "Permission denied")
