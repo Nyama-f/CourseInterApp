@@ -1,11 +1,12 @@
-package com.example.courseinterapp
+package com.example.courseinterapp.ui
 
 import android.app.Service
-import android.content.Context
 import android.content.Intent
 import android.os.IBinder
 import android.provider.ContactsContract
 import android.util.Log
+import androidx.fragment.app.FragmentActivity
+import com.example.courseinterapp.Contact
 import kotlin.concurrent.thread
 
 class MyService: Service() {
@@ -44,15 +45,15 @@ class MyService: Service() {
                     cursor.getColumnIndexOrThrow(ContactsContract.Contacts.DISPLAY_NAME)
                 )
                 val contact = Contact(id, name)
-                MainActivity.contactsList.add(contact)
-                Log.d("MainActivity", contact.toString())
+                ListContactFragment.contactsList.add(contact)
+                Log.d("ListContactFragment", contact.toString())
             }
             cursor?.close()
         }
     }
 
     companion object{
-        fun newIntent(context: Context): Intent{
+        fun newIntent(context: FragmentActivity?): Intent{
             return Intent(context, MyService::class.java)
         }
     }
