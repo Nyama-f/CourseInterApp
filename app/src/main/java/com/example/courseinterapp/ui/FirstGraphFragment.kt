@@ -37,8 +37,12 @@ class FirstGraphFragment : Fragment() {
         imgButton.setOnClickListener{
             val name = editText.text
             val hello = "Hello, ${name}"
-            bundle.putString("MyArg", hello)
-            findNavController().navigate(R.id.secondGraphFragment, bundle)
+//            bundle.putString("MyArg", hello)
+//            findNavController().navigate(R.id.secondGraphFragment, bundle)
+
+            val action = FirstGraphFragmentDirections.actionFirstGraphFragmentToSecondGraphFragment()
+            action.setMyArg(hello)
+            findNavController().navigate(action)
         }
     }
 

@@ -21,6 +21,6 @@
         tools:layout="@layout/fragment_second_graph" >
         <argument
             android:name="MyArg"
-            android:defaultValue="Definition wasn't transmit " />
+            android:defaultValue="Definition wasn't transmit" />
     </fragment>
 </navigation>
