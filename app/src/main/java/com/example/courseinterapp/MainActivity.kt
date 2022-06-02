@@ -5,16 +5,26 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.core.app.ActivityCompat
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.courseinterapp.databinding.ActivityMainBinding
+import com.example.courseinterapp.databinding.FragmentFirstGraphBinding
 import com.example.courseinterapp.ui.MyService
 
 class MainActivity : AppCompatActivity() {
 
+    private var _binding: ActivityMainBinding? = null
+    private val binding get() = checkNotNull(_binding) { "Binding is null" }
     //private lateinit var adapter: ContactsListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val navControllerFragment = supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment
+        navControllerFragment.findNavController()
+//            supportFragmentManager.findFragmentById(R.id.navContainer) as NavHostFragment
+//        navControllerFragment.findNavController()
 //        val permissionGranted = ActivityCompat.checkSelfPermission(
 //            this,
 //            android.Manifest.permission.READ_CONTACTS
