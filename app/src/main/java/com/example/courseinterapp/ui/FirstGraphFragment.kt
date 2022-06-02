@@ -12,6 +12,8 @@ import com.example.courseinterapp.databinding.FragmentFirstGraphBinding
 
 class FirstGraphFragment : Fragment() {
 
+    // Коммент оставлен чтобы была возможность отправить коммит
+
     private var _binding: FragmentFirstGraphBinding? = null
     private val binding get() = checkNotNull(_binding) { "Binding is null" }
 
