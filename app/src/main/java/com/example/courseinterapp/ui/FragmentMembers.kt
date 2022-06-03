@@ -14,6 +14,7 @@ import com.example.courseinterapp.databinding.FragmentMembersBinding
 import com.example.courseinterapp.ui.adapters.CardAdapter
 import com.example.courseinterapp.ui.adapters.IconAdapter
 import com.example.courseinterapp.ui.adapters.decorators.FeedHorizontalDividerItemDecoration
+import com.example.courseinterapp.ui.adapters.decorators.FeedVerticalDividerItemDecoration
 
 class FragmentMembers : Fragment(R.layout.fragment_members) {
 
@@ -30,6 +31,7 @@ class FragmentMembers : Fragment(R.layout.fragment_members) {
             iconList.adapter = iconAdapter
         }
         binding.cardList.addItemDecoration(FeedHorizontalDividerItemDecoration(16))
+        binding.iconList.addItemDecoration(FeedVerticalDividerItemDecoration(16))
         cardAdapter.setList(list)
         iconAdapter.setList(iconList)
     }
