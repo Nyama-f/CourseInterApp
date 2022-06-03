@@ -13,27 +13,27 @@ import com.example.courseinterapp.databinding.FragmentSecondGraphBinding
 
 class SecondGraphFragment : Fragment() {
 
-    private var _binding: FragmentSecondGraphBinding? = null
-    private val binding get() = checkNotNull(_binding) { "Binding is null" }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        _binding = FragmentSecondGraphBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        val textView = binding.tvFragmentTwo
-       // val text = arguments?.getString("MyArg")
-        val args: SecondGraphFragmentArgs by navArgs()
-        val text = args.myArg
-        textView.text = text
-    }
+//    private var _binding: FragmentSecondGraphBinding? = null
+//    private val binding get() = checkNotNull(_binding) { "Binding is null" }
+//
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        // Inflate the layout for this fragment
+//        _binding = FragmentSecondGraphBinding.inflate(inflater, container, false)
+//        return binding.root
+//    }
+//
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//
+//        val textView = binding.tvFragmentTwo
+//       // val text = arguments?.getString("MyArg")
+//        val args: SecondGraphFragmentArgs by navArgs()
+//        val text = args.myArg
+//        textView.text = text
+//    }
 
 
 }

@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.courseinterapp.databinding.ActivityMainBinding
 import com.example.courseinterapp.databinding.FragmentFirstGraphBinding
+import com.example.courseinterapp.ui.FirstGraphFragment
 import com.example.courseinterapp.ui.MyService
 
 class MainActivity : AppCompatActivity() {
@@ -21,8 +22,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val navControllerFragment = supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment
-        navControllerFragment.findNavController()
+
+//        val navControllerFragment = supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment
+//        navControllerFragment.findNavController()
 //            supportFragmentManager.findFragmentById(R.id.navContainer) as NavHostFragment
 //        navControllerFragment.findNavController()
 //        val permissionGranted = ActivityCompat.checkSelfPermission(

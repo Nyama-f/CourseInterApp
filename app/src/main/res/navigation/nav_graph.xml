@@ -2,25 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/firstGraphFragment">
+    android:id="@+id/nav_graph">
 
     <fragment
-        android:id="@+id/firstGraphFragment"
-        android:name="com.example.courseinterapp.ui.FirstGraphFragment"
-        android:label="fragment_first_graph"
-        tools:layout="@layout/fragment_first_graph" >
-        <action
-            android:id="@+id/action_firstGraphFragment_to_secondGraphFragment"
-            app:destination="@id/secondGraphFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/secondGraphFragment"
-        android:name="com.example.courseinterapp.ui.SecondGraphFragment"
-        android:label="fragment_second_graph"
-        tools:layout="@layout/fragment_second_graph" >
-        <argument
-            android:name="MyArg"
-            android:defaultValue="Definition wasn't transmit" />
-    </fragment>
+        android:id="@+id/fragmentMembers"
+        android:name="com.example.courseinterapp.ui.FragmentMembers"
+        android:label="fragment_members"
+        tools:layout="@layout/fragment_members" />
 </navigation>
