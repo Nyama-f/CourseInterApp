@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.navArgs
 import com.example.courseinterapp.R
 import com.example.courseinterapp.databinding.FragmentFirstGraphBinding
 import com.example.courseinterapp.databinding.FragmentSecondGraphBinding
@@ -28,7 +29,9 @@ class SecondGraphFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val textView = binding.tvFragmentTwo
-        val text = arguments?.getString("MyArg")
+       // val text = arguments?.getString("MyArg")
+        val args: SecondGraphFragmentArgs by navArgs()
+        val text = args.myArg
         textView.text = text
     }
 

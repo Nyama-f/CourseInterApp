@@ -12,6 +12,8 @@ import com.example.courseinterapp.databinding.FragmentFirstGraphBinding
 
 class FirstGraphFragment : Fragment() {
 
+    // Коммент оставлен чтобы была возможность отправить коммит
+
     private var _binding: FragmentFirstGraphBinding? = null
     private val binding get() = checkNotNull(_binding) { "Binding is null" }
 
@@ -35,8 +37,12 @@ class FirstGraphFragment : Fragment() {
         imgButton.setOnClickListener{
             val name = editText.text
             val hello = "Hello, ${name}"
-            bundle.putString("MyArg", hello)
-            findNavController().navigate(R.id.secondGraphFragment, bundle)
+//            bundle.putString("MyArg", hello)
+//            findNavController().navigate(R.id.secondGraphFragment, bundle)
+
+            val action = FirstGraphFragmentDirections.actionFirstGraphFragmentToSecondGraphFragment()
+            action.setMyArg(hello)
+            findNavController().navigate(action)
         }
     }
 
