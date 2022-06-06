@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.size
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.courseinterapp.R
@@ -13,6 +14,8 @@ import com.example.courseinterapp.data.Memory
 import com.example.courseinterapp.databinding.FragmentMembersBinding
 import com.example.courseinterapp.ui.adapters.CardAdapter
 import com.example.courseinterapp.ui.adapters.IconAdapter
+import com.example.courseinterapp.ui.adapters.decorators.FeedHorizontalDividerItemDecoration
+import com.example.courseinterapp.ui.adapters.decorators.FeedVerticalDividerItemDecoration
 
 class FragmentMembers : Fragment(R.layout.fragment_members) {
 
@@ -30,6 +33,8 @@ class FragmentMembers : Fragment(R.layout.fragment_members) {
         }
         cardAdapter.setList(list)
         iconAdapter.setList(iconList)
+        binding.cardList.addItemDecoration(FeedVerticalDividerItemDecoration(16, cardAdapter.itemCount))
+        binding.iconList.addItemDecoration(FeedHorizontalDividerItemDecoration(16, iconAdapter.itemCount))
     }
     companion object {
         fun newInstance() = FragmentMembers()
