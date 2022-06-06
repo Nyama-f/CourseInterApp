@@ -10,6 +10,10 @@ import com.example.courseinterapp.databinding.CardViewHolderBinding
 class CardAdapter : RecyclerView.Adapter<CardAdapter.CardViewHolder>() {
 
     private val items: MutableList<Memory> = mutableListOf()
+    //    var cardImageClickListener: CardImageClickListener? = null
+//    var cardTitleClickListener: CardTitleClickListener? = null
+    var cardImageClickListener: (() -> Unit)? = null
+    var cardTitleCickListener: (() -> Unit)? = null
 
     fun setList(list: List<Memory>) {
         items.clear()
@@ -44,7 +48,20 @@ class CardAdapter : RecyclerView.Adapter<CardAdapter.CardViewHolder>() {
             with(binding) {
                 title.text = item.title
                 subTitle.text = item.description
+//                mainImage.setOnClickListener{ cardImageClickListener?.onCLick() }
+//                title.setOnClickListener { cardTitleClickListener?.onCLick() }
+                mainImage.setOnClickListener { cardImageClickListener?.invoke() }
+                title.setOnClickListener { cardTitleCickListener?.invoke() }
             }
         }
     }
+// Зачем нам создавать функциональный интерфейс,
+// когда мы можем в поле типа interface, сохранить лямбду
+// в таком случае вызов станет попроще
+//    fun interface CardImageClickListener{
+//        fun onCLick()
+//    }
+//    fun interface CardTitleClickListener{
+//        fun onCLick()
+//    }
 }

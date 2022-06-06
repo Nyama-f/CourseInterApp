@@ -1,17 +1,8 @@
 package com.example.courseinterapp
 
-import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import androidx.core.app.ActivityCompat
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.RecyclerView
 import com.example.courseinterapp.databinding.ActivityMainBinding
-import com.example.courseinterapp.databinding.FragmentFirstGraphBinding
-import com.example.courseinterapp.ui.FirstGraphFragment
-import com.example.courseinterapp.ui.MyService
 
 class MainActivity : AppCompatActivity() {
 
