@@ -15,6 +15,8 @@ import com.example.courseinterapp.databinding.FragmentMembersBinding
 import com.example.courseinterapp.ui.Const.ACTION_START_OR_RESUME_SERVICE
 import com.example.courseinterapp.ui.adapters.CardAdapter
 import com.example.courseinterapp.ui.adapters.IconAdapter
+import com.example.courseinterapp.ui.adapters.decorators.FeedHorizontalDividerItemDecoration
+import com.example.courseinterapp.ui.adapters.decorators.FeedVerticalDividerItemDecoration
 import com.example.courseinterapp.ui.services.TestService
 import com.example.courseinterapp.ui.workers.MyWorker
 import java.util.concurrent.TimeUnit
@@ -48,8 +50,8 @@ class FragmentMembers : Fragment(R.layout.fragment_members) {
         }
         cardAdapter.setList(list)
         iconAdapter.setList(iconList)
-
-
+        binding.cardList.addItemDecoration(FeedVerticalDividerItemDecoration(16, cardAdapter.itemCount))
+        binding.iconList.addItemDecoration(FeedHorizontalDividerItemDecoration(16, iconAdapter.itemCount))
         cardAdapter.cardImageClickListener = {
             simpleWork()
         }
