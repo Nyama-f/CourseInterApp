@@ -25,6 +25,7 @@
             </intent-filter>
         </activity>
         <service android:name=".ui.services.MyService"/>
+        <service android:name=".ui.services.TestService"/>
     </application>
 
 </manifest>

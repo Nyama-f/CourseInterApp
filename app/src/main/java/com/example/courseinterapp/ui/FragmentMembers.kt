@@ -48,6 +48,8 @@ class FragmentMembers : Fragment(R.layout.fragment_members) {
         }
         cardAdapter.setList(list)
         iconAdapter.setList(iconList)
+
+
         cardAdapter.cardImageClickListener = {
             simpleWork()
         }
