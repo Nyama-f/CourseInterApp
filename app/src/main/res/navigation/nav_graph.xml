@@ -17,5 +17,9 @@
         android:id="@+id/addUserFragment"
         android:name="com.example.courseinterapp.ui.AddUserFragment"
         android:label="fragment_add_user"
-        tools:layout="@layout/fragment_add_user" />
+        tools:layout="@layout/fragment_add_user" >
+        <action
+            android:id="@+id/action_addUserFragment_to_listUserFragment"
+            app:destination="@id/listUserFragment" />
+    </fragment>
 </navigation>

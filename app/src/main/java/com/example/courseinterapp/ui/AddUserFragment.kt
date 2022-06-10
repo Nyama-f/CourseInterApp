@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.courseinterapp.R
@@ -14,7 +15,7 @@ import com.example.courseinterapp.ui.viewmodel.AddUserFragmentViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class AddUserFragment : Fragment(R.layout.fragment_add_user) {
+class AddUserFragment : DialogFragment(R.layout.fragment_add_user) {
     private val binding: FragmentAddUserBinding by viewBinding()
 
     private val viewModel: AddUserFragmentViewModel by viewModels()
