@@ -1,11 +1,11 @@
-
+package com.example.courseinterapp
 import android.app.Application
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.os.Build
 import androidx.annotation.RequiresApi
-import com.example.courseinterapp.ui.Const.SERVICE_CHANNEL_ID
-import com.example.courseinterapp.ui.Const.WORKER_CHANNEL_ID
+import com.example.courseinterapp.utils.Const.SERVICE_CHANNEL_ID
+import com.example.courseinterapp.utils.Const.WORKER_CHANNEL_ID
 
 class MyApplication: Application() {
     @RequiresApi(Build.VERSION_CODES.O)

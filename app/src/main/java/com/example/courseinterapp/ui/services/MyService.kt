@@ -6,7 +6,7 @@ import android.os.IBinder
 import android.provider.ContactsContract
 import android.util.Log
 import androidx.fragment.app.FragmentActivity
-import com.example.courseinterapp.Contact
+import com.example.courseinterapp.data.model.Contact
 import com.example.courseinterapp.ui.ListContactFragment
 import kotlin.concurrent.thread
 

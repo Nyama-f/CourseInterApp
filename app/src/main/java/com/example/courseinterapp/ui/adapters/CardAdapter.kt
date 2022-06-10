@@ -3,7 +3,7 @@ package com.example.courseinterapp.ui.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.courseinterapp.data.Memory
+import com.example.courseinterapp.data.model.Memory
 import com.example.courseinterapp.databinding.CardViewHolderBinding
 
 
