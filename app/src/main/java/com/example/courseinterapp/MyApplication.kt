@@ -6,7 +6,9 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import com.example.courseinterapp.utils.Const.SERVICE_CHANNEL_ID
 import com.example.courseinterapp.utils.Const.WORKER_CHANNEL_ID
+import dagger.hilt.android.HiltAndroidApp
 
+@HiltAndroidApp
 class MyApplication: Application() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate() {

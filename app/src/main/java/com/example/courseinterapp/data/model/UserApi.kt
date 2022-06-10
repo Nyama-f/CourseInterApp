@@ -8,7 +8,7 @@ data class UserApi(
     @SerializedName("email")
     val userEmail: String,
     @SerializedName("id")
-    val userId: String,
+    val userId: String?,
     @SerializedName("name")
     val userName: String
 ) {

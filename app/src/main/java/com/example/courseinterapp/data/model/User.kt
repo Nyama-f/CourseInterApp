@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 data class User(
     val userImage: String,
     val userEmail: String,
-    val userId: String,
+    val userId: String?,
     val userName: String
 ){
     fun toUserApi() = UserApi(

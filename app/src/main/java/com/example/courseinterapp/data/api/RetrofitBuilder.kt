@@ -19,6 +19,6 @@ class RetrofitBuilder {
     .create(ApiService::class.java)
 
     companion object {
-        private const val BASE_URL = "https://628913bb7af826e39e6870bc.mockapi.io/"
+        private const val BASE_URL = "https://62a226f1cc8c0118ef5de9a6.mockapi.io/"
     }
 }

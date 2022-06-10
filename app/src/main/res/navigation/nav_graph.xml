@@ -2,11 +2,20 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph">
-
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listUserFragment">
     <fragment
-        android:id="@+id/fragmentMembers"
-        android:name="com.example.courseinterapp.ui.FragmentMembers"
-        android:label="fragment_members"
-        tools:layout="@layout/fragment_members" />
+        android:id="@+id/listUserFragment"
+        android:name="com.example.courseinterapp.ui.ListUserFragment"
+        android:label="fragment_list_user"
+        tools:layout="@layout/fragment_list_user" >
+        <action
+            android:id="@+id/navToAddUserFragment"
+            app:destination="@id/addUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addUserFragment"
+        android:name="com.example.courseinterapp.ui.AddUserFragment"
+        android:label="fragment_add_user"
+        tools:layout="@layout/fragment_add_user" />
 </navigation>

@@ -8,4 +8,6 @@ interface ApiRepository {
 
     fun getUsers(): Flow<List<UserApi>>
 
+    fun addUser(userApi: UserApi)
+
 }
