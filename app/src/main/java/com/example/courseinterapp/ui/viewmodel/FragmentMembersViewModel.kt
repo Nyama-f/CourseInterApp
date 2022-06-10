@@ -1,8 +1,8 @@
 package com.example.courseinterapp.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.example.courseinterapp.data.repository.MainRepository
+import com.example.courseinterapp.domain.repository.ApiRepository
 
-class FragmentMembersViewModel(private val mainRepository: MainRepository): ViewModel() {
+class FragmentMembersViewModel(private val mainRepository: ApiRepository): ViewModel() {
 
 }
