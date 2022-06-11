@@ -28,6 +28,11 @@
         </activity>
         <service android:name=".ui.services.MyService"/>
         <service android:name=".ui.services.TestService"/>
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            tools:node="remove">
+        </provider>
     </application>
 
 </manifest>
