@@ -1,10 +1,9 @@
 package com.example.courseinterapp.ui.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.courseinterapp.data.Icon
+import com.example.courseinterapp.data.model.Icon
 import com.example.courseinterapp.databinding.IconActiveLayoutBinding
 import com.example.courseinterapp.databinding.IconDisableLayoutBinding
 

@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.work.*
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.courseinterapp.R
-import com.example.courseinterapp.data.Icon
-import com.example.courseinterapp.data.Memory
+import com.example.courseinterapp.data.model.Icon
+import com.example.courseinterapp.data.model.Memory
 import com.example.courseinterapp.databinding.FragmentMembersBinding
 import com.example.courseinterapp.ui.Const.ACTION_START_OR_RESUME_SERVICE
 import com.example.courseinterapp.ui.adapters.CardAdapter
