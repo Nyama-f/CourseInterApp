@@ -9,12 +9,12 @@ import androidx.core.app.NotificationCompat
 import androidx.lifecycle.LifecycleService
 import com.example.courseinterapp.MainActivity
 import com.example.courseinterapp.R
-import com.example.courseinterapp.ui.Const
-import com.example.courseinterapp.ui.Const.ACTION_OPEN_SECOND_FRAGMENT
-import com.example.courseinterapp.ui.Const.ACTION_PAUSE_SERVICE
-import com.example.courseinterapp.ui.Const.ACTION_START_OR_RESUME_SERVICE
-import com.example.courseinterapp.ui.Const.ACTION_STOP_SERVICE
-import com.example.courseinterapp.ui.Const.SERVICE_NOTIFICATION_ID
+import com.example.courseinterapp.utils.Const
+import com.example.courseinterapp.utils.Const.ACTION_OPEN_SECOND_FRAGMENT
+import com.example.courseinterapp.utils.Const.ACTION_PAUSE_SERVICE
+import com.example.courseinterapp.utils.Const.ACTION_START_OR_RESUME_SERVICE
+import com.example.courseinterapp.utils.Const.ACTION_STOP_SERVICE
+import com.example.courseinterapp.utils.Const.SERVICE_NOTIFICATION_ID
 
 
 class TestService : LifecycleService() {

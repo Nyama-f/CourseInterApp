@@ -12,7 +12,7 @@ import com.example.courseinterapp.R
 import com.example.courseinterapp.data.model.Icon
 import com.example.courseinterapp.data.model.Memory
 import com.example.courseinterapp.databinding.FragmentMembersBinding
-import com.example.courseinterapp.ui.Const.ACTION_START_OR_RESUME_SERVICE
+import com.example.courseinterapp.utils.Const.ACTION_START_OR_RESUME_SERVICE
 import com.example.courseinterapp.ui.adapters.CardAdapter
 import com.example.courseinterapp.ui.adapters.IconAdapter
 import com.example.courseinterapp.ui.adapters.decorators.FeedHorizontalDividerItemDecoration
