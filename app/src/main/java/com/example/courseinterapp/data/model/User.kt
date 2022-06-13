@@ -1,5 +1,4 @@
 package com.example.courseinterapp.data.model
-
 import com.google.gson.annotations.SerializedName
 
 data class User(
