@@ -9,8 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
-import com.example.courseinterapp.Contact
-import com.example.courseinterapp.ContactsListAdapter
+import com.example.courseinterapp.data.model.Contact
+import com.example.courseinterapp.ui.adapters.ContactsListAdapter
 import com.example.courseinterapp.databinding.FragmentListContactBinding
 import com.example.courseinterapp.ui.services.MyService
 

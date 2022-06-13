@@ -1,4 +1,4 @@
-package com.example.courseinterapp
+package com.example.courseinterapp.ui.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.courseinterapp.R
+import com.example.courseinterapp.data.model.Contact
 
 class ContactsListAdapter: RecyclerView.Adapter<ContactsListAdapter.ContactItemViewHolder>() {
 

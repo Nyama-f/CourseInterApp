@@ -1,4 +1,4 @@
-package com.example.courseinterapp.data
+package com.example.courseinterapp.data.model
 
 sealed class Icon(
     open val id: Int,

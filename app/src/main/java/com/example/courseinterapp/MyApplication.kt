@@ -1,13 +1,18 @@
-
+package com.example.courseinterapp
 import android.app.Application
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.os.Build
 import androidx.annotation.RequiresApi
-import com.example.courseinterapp.ui.Const.SERVICE_CHANNEL_ID
-import com.example.courseinterapp.ui.Const.WORKER_CHANNEL_ID
+import androidx.hilt.work.HiltWorkerFactory
+import androidx.work.Configuration
+import com.example.courseinterapp.utils.Const.SERVICE_CHANNEL_ID
+import com.example.courseinterapp.utils.Const.WORKER_CHANNEL_ID
+import dagger.hilt.android.HiltAndroidApp
+import javax.inject.Inject
 
-class MyApplication: Application() {
+@HiltAndroidApp
+class MyApplication: Application(), Configuration.Provider {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate() {
         super.onCreate()
@@ -34,4 +39,11 @@ class MyApplication: Application() {
             createNotificationChannel(serviceChannel)
         }
     }
+
+    @Inject
+    lateinit var workerFactory: HiltWorkerFactory
+    override fun getWorkManagerConfiguration(): Configuration =
+        Configuration.Builder()
+            .setWorkerFactory(workerFactory)
+            .build()
 }

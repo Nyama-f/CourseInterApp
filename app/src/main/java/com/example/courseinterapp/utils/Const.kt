@@ -1,4 +1,4 @@
-package com.example.courseinterapp.ui
+package com.example.courseinterapp.utils
 
 object Const {
     const val WORKER_CHANNEL_ID = "worker_channel"

@@ -5,11 +5,9 @@ import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.work.CoroutineWorker
 import androidx.work.ForegroundInfo
-import androidx.work.Worker
 import androidx.work.WorkerParameters
 import com.example.courseinterapp.R
-import com.example.courseinterapp.ui.Const.WORKER_CHANNEL_ID
-import kotlinx.coroutines.delay
+import com.example.courseinterapp.utils.Const.WORKER_CHANNEL_ID
 import kotlin.random.Random
 
 class MyWorker(

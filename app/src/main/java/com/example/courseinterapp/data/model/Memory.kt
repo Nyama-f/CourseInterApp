@@ -1,4 +1,4 @@
-package com.example.courseinterapp.data
+package com.example.courseinterapp.data.model
 
 data class Memory(
     val id: Int,
