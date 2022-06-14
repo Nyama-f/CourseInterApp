@@ -2,7 +2,11 @@ package com.example.courseinterapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.content.ContextCompat
 import com.example.courseinterapp.databinding.ActivityMainBinding
+import com.example.courseinterapp.ui.adapters.PagerAdapter
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -14,7 +18,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        //setContentView(R.layout.activity_main)
+        _binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        initial()
+
 
 //        val navControllerFragment = supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment
 //        navControllerFragment.findNavController()
@@ -30,6 +38,45 @@ class MainActivity : AppCompatActivity() {
 //        }else{
 //            requestPermission()
 //        }
+    }
+
+    private fun initial(){
+        // Добавление адаптера во ViewPager
+        binding.viewPager.adapter = PagerAdapter(this)
+        // TabLayoutMediator класс для взаимодействия с Tablayout
+        TabLayoutMediator(binding.tabLayout, binding.viewPager){
+                tab, pos ->
+            when(pos){
+                0 -> {
+                    tab.setIcon(R.drawable.android)
+                    tab.icon?.setTint(ContextCompat.getColor(this, R.color.green))
+                }
+                1 -> {
+                    tab.setIcon(R.drawable.account)
+                    tab.icon?.setTint(ContextCompat.getColor(this, R.color.orange))
+                    tab.icon?.alpha = 100
+                }
+                2 -> {
+                    tab.setIcon(R.drawable.desktop)
+                    tab.icon?.setTint(ContextCompat.getColor(this, R.color.blue))
+                    tab.icon?.alpha = 100
+                }
+            }
+        }.attach()
+        binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                tab.icon?.alpha = 250
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab) {
+                tab.icon?.alpha = 100
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab) {
+                TODO("Not yet implemented")
+            }
+
+        })
     }
 
 //    private fun setupRecyclerView(){
