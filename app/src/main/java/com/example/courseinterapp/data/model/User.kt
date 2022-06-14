@@ -13,4 +13,11 @@ data class User(
         userId = userId,
         userName = userName
     )
+
+    fun toUserEntity() = UserEntity(
+        userImage = userImage,
+        userEmail = userEmail,
+        userId = userId?.toInt() ?: 0,
+        userName = userName
+    )
 }

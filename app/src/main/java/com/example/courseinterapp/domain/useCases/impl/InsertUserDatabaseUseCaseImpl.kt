@@ -9,7 +9,7 @@ import javax.inject.Inject
 class InsertUserDatabaseUseCaseImpl @Inject constructor(
     private val databaseRepository: DatabaseRepository
 ): InsertUserDatabaseUseCase {
-    override fun invoke(user: User): Flow<Unit> {
-        return databaseRepository.insertUser(user)
-    }
+
+    override fun invoke(user: User): Flow<Unit> = databaseRepository.insertUser(user)
+
 }

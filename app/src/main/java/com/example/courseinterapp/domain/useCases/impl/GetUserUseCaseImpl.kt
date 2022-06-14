@@ -13,4 +13,5 @@ class GetUsersUseCaseImpl @Inject constructor(
 ) : GetUsersUseCase {
 
     override fun invoke(): Flow<List<UserApi>> = apiRepository.getUsers().flowOn(Dispatchers.IO)
+
 }

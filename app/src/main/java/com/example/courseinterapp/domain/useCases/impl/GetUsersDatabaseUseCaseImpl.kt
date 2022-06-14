@@ -10,7 +10,5 @@ class GetUsersDatabaseUseCaseImpl @Inject constructor(
     private val databaseRepository: DatabaseRepository
 ): GetUsersDatabaseUseCase {
 
-    override fun invoke(): Flow<List<User>> {
-        return databaseRepository.getUsers()
-    }
+    override fun invoke(): Flow<List<User>>  = databaseRepository.getUsers()
 }
