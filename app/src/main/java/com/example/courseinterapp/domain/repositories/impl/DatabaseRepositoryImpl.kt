@@ -16,19 +16,21 @@ class DatabaseRepositoryImpl @Inject constructor(
         emit(users)
     }
 
-    override fun getUser(userId: Int): Flow<User> {
-        TODO("Not yet implemented")
+    override fun getUser(userId: Int): Flow<User>  = flow {
+        val user = userDao.getUser(userId).toUser()
+        emit(user)
     }
 
-    override fun insertUser(user: User) =  flow<Unit> {
+    override fun insertUser(user: User): Flow<Unit> = flow {
         userDao.insertUser(user.toUserEntity())
     }
 
-    override fun insertUsers(users: List<User>): Flow<Unit> {
-        TODO("Not yet implemented")
+    override fun insertUsers(users: List<User>): Flow<Unit> = flow{
+        val users = users.map{ it.toUserEntity() }
+        userDao.insertUsers(users)
     }
 
-    override fun deleteUser(user: User): Flow<Unit> {
-        TODO("Not yet implemented")
+    override fun deleteUser(user: User): Flow<Unit>  = flow{
+        userDao.deleteUser(user.toUserEntity())
     }
 }

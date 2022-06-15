@@ -16,7 +16,7 @@ interface UserDao {
     suspend fun insertUser(user: UserEntity)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertUsers(vararg user: UserEntity)
+    suspend fun insertUsers(users: List<UserEntity>)
 
     @Delete
     suspend fun deleteUser(user: UserEntity)
